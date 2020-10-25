@@ -1,0 +1,92 @@
+<section>
+  <div class="container-fluid">
+    <div class="mylead">
+      <div class="row back">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <span class="loghead txtcaps"> {{ 'home.welcome' | translate }}
+            {{name}}</span>
+        </div>
+      </div>
+      <div class="row pad-20">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="carddiv">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
+        <!-- total percentage -->
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="carddiv">
+            <div class="sizeText">
+              <label>23 &nbsp;% &nbsp;&nbsp;
+                <img src="assets/img/long-arrow-pointing-up.svg">
+              </label>
+            </div>
+          </div>
+          <div class="carddiv">
+            <div class="mainDivTab">
+              <div class="subDiv1">
+                <img src="assets/img/male-user-shadow.svg">
+              </div>
+              <div class="subDiv2">
+                <div>
+                  <span>Name&nbsp;:</span>&nbsp;<label>Admin Patil</label>
+                </div>
+                <div>
+                  <span>Username&nbsp;:</span>&nbsp;<label>Adminp456</label>
+                </div>
+                <div>
+                  <span>Email ID&nbsp;:</span>&nbsp;<label>adminpatil@gmail.com</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- open deal -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tan-marg">
+          <div class="carddiv">
+            <div class="divheight">
+              <table>
+                <thead>
+                  <tr>
+                    <td>{{ 'home.srno' | translate }} </td>
+                    <td>{{ 'home.name' | translate }}</td>
+                    <td>{{ 'home.username' | translate }}</td>
+                    <td>{{ 'home.city' | translate }}</td>
+                    <td>{{ 'home.pincode' | translate }}</td>
+                    <td>{{ 'home.companyname' | translate }}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let deal of information;let i=index;">
+                    <td>{{i+1}}</td>
+                    <td>{{deal.name}}</td>
+                    <td>{{deal.username}}</td>
+                    <td>{{deal.address.city}}</td>
+                    <td>{{deal.address.zipcode}} </td>
+                    <td>{{deal.company.name}} </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div>
+      <div *ngIf="userLoader == true">
+        <div class="loading-screen-wrapper">
+          <div class="loading-screen-icon">
+            <span class="load">Loading<span class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
